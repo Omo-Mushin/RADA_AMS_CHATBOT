@@ -1,10 +1,10 @@
-streamlit==1.31.0
+streamlit>=1.32.0
+rich>=14.2.0
 chromadb==0.4.22
 sentence-transformers==2.3.1
 groq==0.4.1
 python-dotenv==1.0.0
-tiktoken==0.5.2  # will try to build from source
-torch>=2.5.0  # 2.9.0 works with Py3.13
+tiktoken==0.5.2
+torch>=2.5.0
 transformers==4.36.2
-rich>=14.2.0
 numpy==1.26.4
