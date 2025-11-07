@@ -33,12 +33,16 @@ def load_reranker():
 
 @st.cache_resource
 def init_groq_client():
-    """Initialize Groq client"""
+    """Initialize Groq client (Python 3.13 compatible)"""
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
-        raise RuntimeError("❌ GROQ_API_KEY not found in environment")
+        raise RuntimeError("❌ GROQ_API_KEY not found in environment variables")
+    
+    
+    client = Groq(api_key=api_key)
     print("✅ Groq client initialized")
-    return Groq(api_key=api_key)
+    return client
+
 
 def expand_query(query: str) -> list:
     """Generate multiple query variations for better retrieval"""
